@@ -7,7 +7,7 @@ import {WithoutUseModalExample} from './src/without-use-modal/WithUseModalExampl
 const App = () => {
   return (
     <ModalProvider>
-      <View>
+      <View style={styles.container}>
         <Text style={styles.title}>Without useModal</Text>
         <WithoutUseModalExample />
         <Text style={styles.title}>With useModal</Text>
@@ -18,6 +18,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   title: {
     fontSize: 16,
     padding: 16,
