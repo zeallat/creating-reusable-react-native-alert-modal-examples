@@ -1,19 +1,14 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {useAlertModal} from './useAlertModal';
+import {useLogin} from './useLogin';
 
 export const Child3 = () => {
-  const alertModal = useAlertModal();
+  const login = useLogin();
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() =>
-        alertModal.show({
-          title: 'Congratulations🎉',
-          message: 'Sign up is complete!',
-        })
-      }>
-      <Text style={styles.text}>Child 3</Text>
+    <TouchableOpacity style={styles.container} onPress={() => login()}>
+      <Text style={styles.text}>
+        {'Child 3\n(show alert from another hook)'}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -21,7 +16,7 @@ export const Child3 = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    backgroundColor: '#e76f51',
+    backgroundColor: '#e9c46a',
   },
   text: {
     color: '#fff',

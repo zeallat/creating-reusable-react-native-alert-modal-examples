@@ -9,11 +9,13 @@ export const Child1 = () => {
     setAlertVisible(false);
   };
 
+  const handlePress = () => {
+    setAlertVisible(true);
+  };
+
   return (
     <>
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => setAlertVisible(true)}>
+      <TouchableOpacity style={styles.container} onPress={handlePress}>
         <Text style={styles.text}>Child 1</Text>
       </TouchableOpacity>
       <AlertModal

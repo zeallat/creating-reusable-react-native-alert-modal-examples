@@ -4,15 +4,26 @@ import {useAlertModal} from './useAlertModal';
 
 export const Child2 = () => {
   const alertModal = useAlertModal();
+
+  const handlePress = () => {
+    const timestamp = Date.now();
+    let title = '';
+    let message = '';
+    if (timestamp % 2 === 0) {
+      title = 'even';
+      message = `timestamp is even!: ${timestamp}`;
+    } else {
+      title = 'odd';
+      message = `timestamp is odd!: ${timestamp}`;
+    }
+    alertModal.show({
+      title,
+      message,
+    });
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() =>
-        alertModal.show({
-          title: '⚠️Alert',
-          message: 'Subscription expires in one week',
-        })
-      }>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Text style={styles.text}>Child 2</Text>
     </TouchableOpacity>
   );

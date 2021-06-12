@@ -4,15 +4,16 @@ import {useAlertModal} from './useAlertModal';
 
 export const Child1 = () => {
   const alertModal = useAlertModal();
+
+  const handlePress = () => {
+    alertModal.show({
+      title: 'Good morning 😊',
+      message: 'Have a cup of coffee!',
+    });
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() =>
-        alertModal.show({
-          title: 'Good morning 😊',
-          message: 'Have a cup of coffee!',
-        })
-      }>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Text style={styles.text}>Child 1</Text>
     </TouchableOpacity>
   );
